@@ -46,10 +46,14 @@ public class GUI extends Thread {
         frame.setAlwaysOnTop(true);
 
         startButton.addActionListener(e -> {
-            System.out.println("Attempting to start new thread");
-            ClickThread ct = new ClickThread(msIntervalVal);
-            worker = new Thread(ct);
-            worker.start();
+            if (Thread.activeCount() <= 2) {
+                System.out.println("Number of threads " + Thread.activeCount());
+                System.out.println("Attempting to start new thread");
+                ClickThread ct = new ClickThread(msIntervalVal);
+                worker = new Thread(ct);
+                worker.start();
+                System.out.println("Number of threads " + Thread.activeCount());
+            }
         });
         stopButton.addActionListener(e -> stopAction());
         msInterval.getDocument().addDocumentListener(

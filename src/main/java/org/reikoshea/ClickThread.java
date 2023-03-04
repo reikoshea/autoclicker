@@ -18,7 +18,7 @@ public class ClickThread implements Runnable {
         } catch (AWTException e) {
             throw new RuntimeException(e);
         }
-        System.out.printf("Current Interval: %d", msInterval);
+        System.out.printf("Current Interval: %d\n", msInterval);
         try {
             System.out.println("Sleeping for 5000ms");
             Thread.sleep(5000);
@@ -26,7 +26,7 @@ public class ClickThread implements Runnable {
                 System.out.println("clicking...");
                 bot.mousePress(InputEvent.BUTTON1_MASK);
                 bot.mouseRelease(InputEvent.BUTTON1_MASK);
-                System.out.printf("Done. Sleeping for %d", msInterval);
+                System.out.printf("Done. Sleeping for %d\n", msInterval);
                 Thread.sleep(msInterval);
             }
         } catch (InterruptedException ex) {
