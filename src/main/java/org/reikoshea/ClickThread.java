@@ -24,8 +24,8 @@ public class ClickThread implements Runnable {
             Thread.sleep(5000);
             while(true) {
                 System.out.println("clicking...");
-                bot.mousePress(InputEvent.BUTTON1_MASK);
-                bot.mouseRelease(InputEvent.BUTTON1_MASK);
+                bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+                bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
                 System.out.printf("Done. Sleeping for %d\n", msInterval);
                 Thread.sleep(msInterval);
             }
