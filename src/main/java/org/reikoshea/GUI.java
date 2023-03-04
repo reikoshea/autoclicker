@@ -4,12 +4,9 @@ import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import java.awt.*;
-import java.awt.event.InputEvent;
 
 public class GUI extends Thread {
     public int msIntervalVal = 1000;
-    public volatile boolean shouldRun = true;
-    public Robot bot = new Robot();
     private Thread worker;
     public GUI() throws AWTException {
         JFrame frame = new JFrame();
